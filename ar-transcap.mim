@@ -1,0 +1,88 @@
+;; ar-transcap.mim -- Arabic input method based on Roman transliteration, making use of capitals.
+;; Copyright (C) 2024 "Maxim Sigalov (xivarri)" <joop@kiefte.net>
+
+;; Based on ar-translit.mim by Joop Kiefte
+;; https://github.com/xmirror/m17n-db/blob/master/MIM/ar-translit.mim
+
+(input-method ar transcap)
+
+(description "Arabic input method based on Roman transliteration.
+For letters with common single-latin-letter romanizations, the latin letter is used.
+Capitals are used mostly for emphatic and pharyngeal consonants.
+Prefixing a . adds a hamzah.
+Some remaining letters are assigned to unused but otherwise unrelated keys.
+when several interpretations are possible you can get other variations with a preceding dot. For some letters the commonly used numbers from chat usage are used, these are then preceded by or two dots. Usually the dotted variation also has dots in the written form. If you speak Arabic, use this translit and have motivated suggestions to improve it, please mail me on joop@kiefte.net")
+
+(title "ع")
+
+(map
+ (generic
+  ("1" "١")
+  ("2" "٢")
+  ("3" "٣")
+  ("4" "٤")
+  ("5" "٥")
+  ("6" "٦")
+  ("7" "٧")
+  ("8" "٨")
+  ("9" "٩")
+  ("0" "٠")
+
+  ("C" "ء")
+  ("a" "ا")
+  (".a" "أ")
+  ("A" "آ")
+  (".A" "إ")
+  ("b" "ب")
+  ("t" "ت")
+  ("v" "ث")
+  ("j" "ج")
+  ("H" "ح")
+  ("x" "خ")
+  ("d" "د")
+  ("V" "ذ")
+  ("r" "ر")
+  ("z" "ز")
+  ("s" "س")
+  ("c" "ش")
+  ("S" "ص")
+  ("D" "ض")
+  ("T" "ط")
+  ("Z" "ظ")
+  ("g" "غ")
+  ("G" "ع")
+  ("f" "ف")
+  ("q" "ق")
+  ("k" "ك")
+  ("l" "ل")
+  ("m" "م")
+  ("n" "ن")
+  ("h" "ه")
+  ("w" "و")
+  (".w" "ؤ")
+  ("y" "ي")
+  ("Y" "ى")
+  (".y" "ئ")
+  ("e" "ة")
+  ("E" "َ")	; fathah since a is taken
+  ("u" "ُ")	; dammah
+  ("i" "ِ")	; kasrah
+  ("o" "ْ")	; sukun
+  ("O" "ٰ")	; superscript alif
+  ("U" "ّ")	; shaddah
+
+  ("?" "؟")
+
+  ("J" "‍")	; zero width joiner
+  ("L" "‎")	; left to right mark
+  ("N" "‌")	; zero width non joiner
+  ("R" "‏")	; right to left mark
+))
+
+(state
+ (init
+  (generic)))
+
+;; Local Variables:
+;; mode: lisp
+;; End:
